@@ -2,8 +2,31 @@
 
 This is a MediaWiki skin that uses Bootstrap 2 from Twitter!  The framework gives a boatload of features that play really nicely with a MediaWiki installation.  To get up and rolling, there's a few things that should be done.
 
+## Installation
+First, clone the repository into your `skins/` directory.
+
+````
+git clone https://github.com/borkweb/bootstrap-mediawiki.git
+````
+
+Next, in `LocalSettings.php` set:
+
+````php
+$wgDefaultSkin = 'bootstrapmediawiki';
+````
+
+Then add at the bottom:
+
+````php
+require_once( "$IP/skins/bootstrap-mediawiki/bootstrap-mediawiki.php" );
+````
+
 ## Setup
 Once you've enabled the skin, you'll want to create a few pages.
+
+### Customization Vars
+
+`$wgTOCLocation = 'sidebar';` - moves the TOC to a sidebar.
 
 ### Create: Bootstrap:Footer
 This MediaWiki page will contain what appears in your footer.  I've set mine to the following:
@@ -67,3 +90,11 @@ Usage:
 
 ### Short Title
 If you want a shorter title to appear in your navbar, you can add <code>$wgSitenameshort = 'Short Name';</code> to your LocalSettings.php file.
+
+### Custom CSS
+If you want a custom CSS file for overrides or site-specific features,
+you can declare <code>$wgSiteCSS = 'bootstrap-mediawiki/custom.css'</code>
+
+### Custom JS
+If you want a custom JS file for overrides or site-specific features,
+you can declare <code>$wgSiteJS = 'bootstrap-mediawiki/custom.js'</code>
